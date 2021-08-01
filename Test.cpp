@@ -7,23 +7,20 @@
 #include <cstdlib>
 #include <cstdio>
 #include <stdio.h>
-
 //SEBASTIAN ORJUELA SANCHEZ
 //ISABELLA BLANCO
-
 using namespace std;
 struct Titulares
 {
+
     char *nombre = new char[100];
     char *nacimiento = new char[11];
     int fijo;
     int celular;
     char *dirr = new char[10];
-    
 };
 struct Cuenta
 {
-
     int saldo;
     bool estado;
     char fecha[11];
@@ -41,6 +38,7 @@ Función: Crear por consola cuentas dentro del archivo para posterior ser leidas
 Entradas : La funcion recibe la informacion de usuario por consola
 Salida: El archivo con una nueva cuenta lista para su lectura
 */
+
 void Crear_cuentas()
 {
     Cuenta cuenta_nueva;

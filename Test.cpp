@@ -452,19 +452,19 @@ int main()
                 break;
             case 2:
                 Consignar(Reg_C);
-                system("cin.get();");
+                cin.get();
                 break;
             case 3: 
                 Retirar(Reg_C);
-                system("cin.get();");
+                cin.get();
                 break;
             case 4:
                 Transferir(Reg_C);
-                system("cin.get();");
+                cin.get();
                 break;
              case 5:
                 Edad(Reg_C);
-                system("cin.get();");    
+                cin.get();  
                 break;
             case 6:
 

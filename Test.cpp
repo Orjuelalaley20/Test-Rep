@@ -38,7 +38,7 @@ Función: Crear por consola cuentas dentro del archivo para posterior ser leidas
 Entradas : La funcion recibe la informacion de usuario por consola
 Salida: El archivo con una nueva cuenta lista para su lectura
 */
-
+    
 void Crear_cuentas()
 {
     Cuenta cuenta_nueva;

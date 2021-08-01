@@ -54,7 +54,7 @@ void Crear_cuentas()
     cout <<"2. Ahorros"<<"\n";
     cout << "\nIngrese una opcion: ";
     cin >> opcion;
-    system ("cls");
+    system ("clear");
     switch (opcion)
     {
         case 1:
@@ -65,7 +65,7 @@ void Crear_cuentas()
             cin.ignore();
             for (int i = 0; i < numtitu; i++)   
             {
-                
+
                 cout << "Ingrese su nombre: ";
                 cin.getline((cuenta_nueva.titular + i)->nombre, 50, '\n');
                 cout << "Ingrese su fecha de nacimiento (aaaa-mm-dd): ";
@@ -90,7 +90,7 @@ void Crear_cuentas()
             {
                 entrada<<(cuenta_nueva.titular + i)->nombre<<" *"<<(cuenta_nueva.titular + i)->nacimiento<<" *"<<(cuenta_nueva.titular + i)->fijo<<" *"<<(cuenta_nueva.titular + i)->celular<<" *"<<(cuenta_nueva.titular + i)->dirr<<"\n";
             }
-             system ("cls");
+             system ("clear");
             break;     
         case 2:
             strcpy(cuenta_nueva.tipo , "ahorros");
@@ -123,14 +123,14 @@ void Crear_cuentas()
             {
                 entrada<<(cuenta_nueva.titular + i)->nombre<<" *"<<(cuenta_nueva.titular + i)->nacimiento<<" *"<<(cuenta_nueva.titular + i)->fijo<<" *"<<(cuenta_nueva.titular + i)->celular<<" *"<<(cuenta_nueva.titular + i)->dirr<<"\n";
             }
-            system ("cls");
+            system ("clear");
             break;
         default:
             cout << "Opcion no valida";
             break;
     }   
     entrada<<"0";
-    system("cls");
+    system("clear");
 }
 /*
 Nombre:Capturar 
@@ -427,7 +427,7 @@ int main()
     int opcion;
     Capturar (Reg_C);
     do {
-        system("cls");
+        system("clear");
         cout <<"---------- MENU DE JAVIBANK ------------\n";
         cout << "1. Crear cuentas y titulares\n";
         cout << "2. Consignar en una cuenta\n";
@@ -440,12 +440,12 @@ int main()
         cout << "\nIngrese una opcion: ";
         cin >> opcion;
         
-        system("cls");
+        system("clear");
 
         switch (opcion)
         {
             case 1:
-                system("cls");
+                system("clear");
                 Crear_cuentas();
                 Capturar (Reg_C);
                 break;

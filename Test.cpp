@@ -19,6 +19,7 @@ struct Titulares
     int celular;
     char *dirr = new char[10];
 };
+
 struct Cuenta
 {
     int saldo;
@@ -38,7 +39,7 @@ Función: Crear por consola cuentas dentro del archivo para posterior ser leidas
 Entradas : La funcion recibe la informacion de usuario por consola
 Salida: El archivo con una nueva cuenta lista para su lectura
 */
-    
+
 void Crear_cuentas()
 {
     Cuenta cuenta_nueva;
@@ -64,6 +65,7 @@ void Crear_cuentas()
             cin.ignore();
             for (int i = 0; i < numtitu; i++)   
             {
+                
                 cout << "Ingrese su nombre: ";
                 cin.getline((cuenta_nueva.titular + i)->nombre, 50, '\n');
                 cout << "Ingrese su fecha de nacimiento (aaaa-mm-dd): ";
@@ -75,6 +77,7 @@ void Crear_cuentas()
                 cin.ignore();
                 cout << "Ingrese su direccion: ";
                 cin.getline((cuenta_nueva.titular + i)->dirr, 10, '\n');
+
             }
             entrada <<'\n';
             entrada <<"#Cuenta\n";

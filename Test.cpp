@@ -88,6 +88,7 @@ void Crear_cuentas()
             entrada<<"#Nombre------fecha Nacimiento----TelFijo-----Celular---Direccion"<<"\n";
             for (int i = 0; i < numtitu; i++)
             {
+
                 entrada<<(cuenta_nueva.titular + i)->nombre<<" *"<<(cuenta_nueva.titular + i)->nacimiento<<" *"<<(cuenta_nueva.titular + i)->fijo<<" *"<<(cuenta_nueva.titular + i)->celular<<" *"<<(cuenta_nueva.titular + i)->dirr<<"\n";
             }
              system ("clear");
@@ -451,19 +452,19 @@ int main()
                 break;
             case 2:
                 Consignar(Reg_C);
-                system("pause");
+                system("cin.get();");
                 break;
             case 3: 
                 Retirar(Reg_C);
-                system("pause");
+                system("cin.get();");
                 break;
             case 4:
                 Transferir(Reg_C);
-                system("pause");
+                system("cin.get();");
                 break;
              case 5:
                 Edad(Reg_C);
-                system("pause");    
+                system("cin.get();");    
                 break;
             case 6:
 

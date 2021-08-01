@@ -7,8 +7,10 @@
 #include <cstdlib>
 #include <cstdio>
 #include <stdio.h>
+
 //SEBASTIAN ORJUELA SANCHEZ
 //ISABELLA BLANCO
+
 using namespace std;
 struct Titulares
 {

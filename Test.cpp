@@ -150,6 +150,7 @@ void Capturar (Cuenta *Reg_C)
     if(!archC)
     {
         cout<<"Error en la apertura del archivo"<<endl;
+        cout<<"chupapimuñaño"<<endl;
     }
     else
     {

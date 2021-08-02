@@ -429,7 +429,7 @@ int main()
     int opcion;
     Capturar (Reg_C);
     do {
-        system("clear");
+        cout <<"manguito";
         cout <<"---------- MENU DE JAVIBANK ------------\n";
         cout << "1. Crear cuentas y titulares\n";
         cout << "2. Consignar en una cuenta\n";

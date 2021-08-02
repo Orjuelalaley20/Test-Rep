@@ -3,10 +3,9 @@ public class Interfaz {
         bachiller b;
         Ingeniero i;
 
-
         b = new bachiller("carlos" , "champagnant",19);
         i = new Ingeniero("edward" , "san pedro " , 21, "electronica");
-
+        System.out.println("esta monda parece que ya corre java sisis señoooor xd");
         System.out.println(b);
         System.out.println(i);
 

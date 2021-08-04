@@ -8,6 +8,7 @@ import java.util.*;
  * @author Sebastian orjuela
  * @author Isabella blanco
  * @since 27-05-2021
+ * 
  */
 
 public abstract class Cuenta implements Serializable {

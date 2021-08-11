@@ -8,6 +8,8 @@ struct nodo
     nodo *siguiente;
 };
 
+
+
 void insertarLista(nodo *&Lista, int n)
 {
     nodo *nuevo_nodo =  new nodo();

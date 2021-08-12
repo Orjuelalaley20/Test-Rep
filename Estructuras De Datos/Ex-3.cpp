@@ -6,6 +6,8 @@ using namespace std;
 struct Celular
 {
     char numero[11];
+    float valor;
+    char empresa;
 };
 
 

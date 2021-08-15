@@ -39,14 +39,18 @@ struct lista
     {
         Nodo *actual = new Nodo();
         actual = cabeza;
+        cout << "{";
         while (actual != NULL)
         {
-            cout << actual->dato << " | \n";
+            
+            cout << actual->dato << " |  ";
             actual = actual->siguiente;
         }
+        cout << "}\n";
     }
     void ordenar()
     {
+        cola = NULL;
         Nodo *actual = cabeza;
         while (actual != NULL)
         {
@@ -55,14 +59,13 @@ struct lista
             actual = siguiente;
         }
         cabeza = cola;
-        
     }
     void insertarordenado(Nodo *nuevo_nodo)
     {
-        if(cola == NULL || cola->dato >= nuevo_nodo->dato)
+        if (cola == NULL || cola->dato >= nuevo_nodo->dato)
         {
             nuevo_nodo->siguiente = cola;
-            cola =  nuevo_nodo;
+            cola = nuevo_nodo;
         }
         else
         {
@@ -74,8 +77,6 @@ struct lista
             nuevo_nodo->siguiente = actual->siguiente;
             actual->siguiente = nuevo_nodo;
         }
-        
-        
     }
     void crearnuevoarch()
     {
@@ -100,7 +101,7 @@ void menu()
     {
         cout << "Menu\n";
         cout << "1. leer archivo y cargar la lista\n";
-        cout << "2. Mostrar las ciudades en la lista\n";
+        cout << "2. Ordenar las ciudades en la lista\n";
         cout << "3. salir\n";
         cout << "opcion :";
         cin >> opcion;
@@ -121,14 +122,14 @@ void menu()
                     }
                     ciudades.mostrarlista();
                     cout << "\n";
-                    ciudades.ordenar();
-                    cout << "Lista ordenada" << endl;
                 }
             }
             entrada.close();
             break;
         case 2:
-
+            ciudades.ordenar();
+            cout << "Lista ordenada" << endl;
+            ciudades.mostrarlista();
             cout << "\n";
             break;
         default:

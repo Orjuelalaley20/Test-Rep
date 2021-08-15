@@ -1,64 +1,114 @@
-#include <list>
-#include <iostream>
-#include <fstream>
-
+#include <bits/stdc++.h>
 using namespace std;
-enum TEmpresa  {claro, tigo, movistar, etb};
-const char *nombreEmpresa[] = {"claro","Tigo", "Movistar", "ETB"};
-struct Celular
+
+struct Node
 {
-    char numero[11];
-    TEmpresa saldo;
-    TEmpresa empresa;
-    void escribir(Celular m)
+    string val;
+    struct Node *next;
+    Node(string x)
     {
-        cout << "numero : " <<m.numero<<"\n";
-        cout << "empresa : " <<nombreEmpresa[m.empresa]<<"\n";
-        cout << "Saldo :" <<m.saldo<<"\n";
+        val = x;
+        next = NULL;
     }
-    TEmpresa empresa(char c)
+};
+
+class LinkedlistIS
+{
+
+public:
+    Node *head;
+    Node *sorted;
+
+    void push(string val)
     {
-        TEmpresa result;
-        switch (c)
+        /* allocate node */
+        Node *newnode = new Node(val);
+        /* link the old list off the new node */
+        newnode->next = head;
+        /* move the head to point to the new node */
+        head = newnode;
+    }
+
+    // function to sort a singly linked list using insertion
+    // sort
+    void insertionSort(Node *headref)
+    {
+        // Initialize sorted linked list
+        sorted = NULL;
+        Node *current = headref;
+        // Traverse the given linked list and insert every
+        // node to sorted
+        while (current != NULL)
         {
-        case 'C':
-            result =  claro;
-            break;
-        case 'M':
-            result =  movistar;
-        case 'E':
-            result = etb;
-        case 'T':
-            result = tigo;
-        default:
-            break;
+            // Store next for next iteration
+            Node *next = current->next;
+            // insert current in sorted linked list
+            sortedInsert(current);
+            // Update current
+            current = next;
+        }
+        // Update head_ref to point to sorted linked list
+        head = sorted;
+    }
+
+    /*
+     * function to insert a new_node in a list. Note that
+     * this function expects a pointer to head_ref as this
+     * can modify the head of the input linked list
+     * (similar to push())
+     */
+    void sortedInsert(Node *newnode)
+    {
+        /* Special case for the head end */
+        if (sorted == NULL || sorted->val >= newnode->val)
+        {
+            newnode->next = sorted;
+            sorted = newnode;
+        }
+        else
+        {
+            Node *current = sorted;
+            /* Locate the node before the point of insertion
+             */
+            while (current->next != NULL && current->next->val < newnode->val)
+            {
+                current = current->next;
+            }
+            newnode->next = current->next;
+            current->next = newnode;
+        }
+    }
+    /* Function to print linked list */
+    void printlist(Node *head)
+    {
+        while (head != NULL)
+        {
+            cout << head->val << " \n";
+            head = head->next;
         }
     }
 };
-int main(int argc, char const *argv[])
+// Driver program to test above functions
+int main()
 {
-    ifstream entrada("Celulares.txt");
-    Celular celular;
-    char caracter;
-    if (!entrada)
-    {
-        cout <<"no se pudo abrir el archivo de texto";
-        exit(EXIT_FAILURE);
-    }
-    else
-    {   
-        entrada >> celular.numero;
-        while(!entrada.eof())
-        {
-            entrada >> caracter;
-            //celular.empresa =  empresa(caracter);
-
-            //entrada >> celular.saldo;
-
-            //escribe(celular);
-            entrada >> celular.numero;
-        }
-    }
-    entrada.close();
-    return 0;
+    LinkedlistIS list;
+    list.head = NULL;
+    list.push("Bogota");
+    list.push("Les Escaldes");
+    list.push("Andorra la Vella");
+    list.push("Umm al Qaywayn");
+    list.push("Ras al - Khaimah");
+    list.push("Khawr FakkÄn");
+    list.push("Dubai");
+    list.push("Dibba Al - Fujairah");
+    list.push("Dibba Al - Hisn");
+    list.push("Porvoo");
+    list.push("Anjala");
+    list.push("LÃ¤nsi - Turunmaa");
+    cout << "Linked List before sorting" << endl;
+    list.printlist(list.head);
+    cout << endl;
+    list.insertionSort(list.head);
+    cout << "Linked List After sorting" << endl;
+    list.printlist(list.head);
 }

@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Nodo
@@ -45,6 +45,49 @@ struct lista
             actual = actual->siguiente;
         }
     }
+    void ordenar()
+    {
+        Nodo *actual = cabeza;
+        while (actual != NULL)
+        {
+            Nodo *siguiente = actual->siguiente;
+            insertarordenado(actual);
+            actual = siguiente;
+        }
+        cabeza = cola;
+        
+    }
+    void insertarordenado(Nodo *nuevo_nodo)
+    {
+        if(cola == NULL || cola->dato >= nuevo_nodo->dato)
+        {
+            nuevo_nodo->siguiente = cola;
+            cola =  nuevo_nodo;
+        }
+        else
+        {
+            Nodo *actual = cola;
+            while (actual->siguiente != NULL && actual->siguiente->dato < nuevo_nodo->dato)
+            {
+                actual = actual->siguiente;
+            }
+            nuevo_nodo->siguiente = actual->siguiente;
+            actual->siguiente = nuevo_nodo;
+        }
+        
+        
+    }
+    void crearnuevoarch()
+    {
+        fstream salida("ciudadesOrdenadas.txt", ios::app);
+        if (!salida)
+        {
+            cout << "no se pudo entrar/crear el archivo binario ";
+        }
+        else
+        {
+        }
+    }
 };
 
 void menu()
@@ -76,14 +119,16 @@ void menu()
                     {
                         ciudades.InsertarLista(linea);
                     }
-                    cout << "Elementos "
-                         << "insertados en la lista correctamente\n";
+                    ciudades.mostrarlista();
+                    cout << "\n";
+                    ciudades.ordenar();
+                    cout << "Lista ordenada" << endl;
                 }
             }
             entrada.close();
             break;
         case 2:
-            ciudades.mostrarlista();
+
             cout << "\n";
             break;
         default:

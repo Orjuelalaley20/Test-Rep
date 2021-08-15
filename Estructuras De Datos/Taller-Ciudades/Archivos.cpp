@@ -1,26 +1,17 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
-struct Celular
+struct nodo
 {
-    char numero[11];
-    float valor;
-    char empresa;
+    int dato;
+    nodo *siguiente;
 };
-
 
 int main(int argc, char const *argv[])
 {
-    ofstream archivo;
-    archivo.open("archivo.txt");
-    archivo << "primera linea\n";
-    archivo << "segunda linea\n";
-    archivo << "tercera linea\n";
-    archivo.close();
-    cout <<"archivo creado con exito !\n";
-    cout <<"------------------------------\n";
     ifstream entrada("archivo.txt");
     char linea[20];
     if (!entrada)
@@ -37,6 +28,6 @@ int main(int argc, char const *argv[])
         }
     }
     entrada.close();
-
     return 0;
 }
+

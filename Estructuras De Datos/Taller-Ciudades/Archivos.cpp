@@ -10,26 +10,47 @@ struct Nodo
     string dato;
     Nodo *siguiente;
 };
-void mostrarlista(Nodo *lista)
+struct lista
 {
-    Nodo *actual = new Nodo();
-    actual = lista;
-    while (actual != NULL)
+    Nodo *cabeza;
+    Nodo *cola;
+    lista()
     {
-        cout << actual->dato << " | \n";
-        actual = actual->siguiente;
+        cabeza = NULL;
+        cola = NULL;
     }
-}
-void InsertarLista(Nodo *&lista, string n)
-{
-    Nodo *nuevo_nodo = new Nodo();
-    nuevo_nodo->dato = n;
-    mostrarlista(lista);
-}
+    void InsertarLista(string n)
+    {
+        Nodo *nuevo_nodo = new Nodo();
+        nuevo_nodo->dato = n;
+        nuevo_nodo->siguiente = NULL;
+        if (cabeza == NULL)
+        {
+            cabeza = nuevo_nodo;
+            cola = nuevo_nodo;
+        }
+        else
+        {
+            cola->siguiente = nuevo_nodo;
+            cola = cola->siguiente;
+        }
+    }
+    void mostrarlista()
+    {
+        Nodo *actual = new Nodo();
+        actual = cabeza;
+        while (actual != NULL)
+        {
+            cout << actual->dato << " | \n";
+            actual = actual->siguiente;
+        }
+    }
+};
+
 void menu()
 {
     int opcion;
-    Nodo *lista = NULL;
+    lista ciudades;
     ifstream entrada("ciudades.txt");
     string linea;
     do
@@ -42,34 +63,32 @@ void menu()
         cin >> opcion;
         switch (opcion)
         {
-            case 1:
-                if (!entrada)
+        case 1:
+            if (!entrada)
+            {
+                cout << "no se pudo abrir el archivo de texto";
+            }
+            else
+            {
+                while (entrada)
                 {
-                    cout << "no se pudo abrir el archivo de texto";
-                }
-                else
-                {
-                    while (entrada)
+                    while (getline(entrada, linea))
                     {
-                        while (getline(entrada, linea))
-                        {
-                            InsertarLista(lista, linea);
-                        }
-                        cout << "Elementos " << "insertados en la lista correctamente\n";
-                        
+                        ciudades.InsertarLista(linea);
                     }
+                    cout << "Elementos "
+                         << "insertados en la lista correctamente\n";
                 }
-                entrada.close();
-                break;
-            case 2:
-                mostrarlista(lista);
-                cout <<"\n";
-                
-                break;
-            default:
-                break;
+            }
+            entrada.close();
+            break;
+        case 2:
+            ciudades.mostrarlista();
+            cout << "\n";
+            break;
+        default:
+            break;
         }
-
     } while (opcion != 3);
 }
 int main(int argc, char const *argv[])

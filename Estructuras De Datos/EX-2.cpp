@@ -19,13 +19,10 @@ int main(int argc, char const *argv[])
     {
         L1.push_back(i); //adiciona elementos al final de la lista
     }
-    imprimirLista(L1);
     L2.push_back("Sebastian");
     L2.push_back("Esteban");
     L2.push_back("Diana");
     L2.push_back("Sergio");
     imprimirLista(L2);
-    L2.reverse();
-    L1.sort();
     return 0;
 }

@@ -42,7 +42,7 @@ struct lista
         cout << "{";
         while (actual != NULL)
         {
-            
+
             cout << actual->dato << " |  ";
             actual = actual->siguiente;
         }
@@ -78,8 +78,10 @@ struct lista
             actual->siguiente = nuevo_nodo;
         }
     }
-    void crearnuevoarch()
+    void NuevoArchivo()
     {
+        Nodo *actual = new Nodo();
+        actual = cabeza;
         fstream salida("ciudadesOrdenadas.txt", ios::app);
         if (!salida)
         {
@@ -87,6 +89,12 @@ struct lista
         }
         else
         {
+            while (actual != NULL)
+            {
+                salida << actual->dato << "\n";
+                actual = actual->siguiente;
+            }
+            cout << "archivo creado \n";
         }
     }
 };
@@ -101,7 +109,7 @@ void menu()
     {
         cout << "Menu\n";
         cout << "1. leer archivo y cargar la lista\n";
-        cout << "2. Ordenar las ciudades en la lista\n";
+        cout << "2. Ordenar las ciudades en la lista e escribirlas en un nuevo archivo \n";
         cout << "3. salir\n";
         cout << "opcion :";
         cin >> opcion;
@@ -130,6 +138,7 @@ void menu()
             ciudades.ordenar();
             cout << "Lista ordenada" << endl;
             ciudades.mostrarlista();
+            ciudades.NuevoArchivo();
             cout << "\n";
             break;
         default:

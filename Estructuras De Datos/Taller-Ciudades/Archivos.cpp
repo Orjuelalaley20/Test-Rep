@@ -60,32 +60,33 @@ void NuevoArchivo(list<string> ciudades)
     }
     else
     {
-       for (string n: ciudades)
-       {
-           salida << n <<" | ";
-       }
-        cout << "archivo creado \n";
+        for (string n : ciudades)
+        {
+            salida << n << "\n";
+        }
+        cout << "archivo creado con exito \n";
         salida.close();
     }
 }
-// void Buscar(string nombusc)
-// {
-//     int conta = 0;
-//     for (string e :)
-//     {
-//         if (e == nombusc)
-//         {
-//             cout << conta;
-//         }
-//         else
-//             conta++;
-//     }
-// }
+int Buscar(string nombusc, list<string> ciudades)
+{
+    int conta = 0;
+    for (string e : ciudades)
+    {
+
+        if (e == nombusc)
+            return conta;
+        else
+            conta++;
+    }
+    return 0;
+}
 void menu()
 {
-    int opcion;
+    int opcion, posicion = 0;
     ifstream entrada("ciudades.txt");
-    string linea;
+    string linea,nombrebusc;
+    string name;
     list<string> ciudades;
     do
     {
@@ -133,6 +134,14 @@ void menu()
             NuevoArchivo(ciudades);
             break;
         case 3:
+            cin.ignore();
+            cout << "Ingrese el nombre de la ciudad la cual desea consultar su posicion : ";
+            getline(cin, nombrebusc);
+            system("clear");
+            if(Buscar(nombrebusc,ciudades) != 0)
+                cout << "la posicion en la lista de la ciudad " << nombrebusc << " es : " << Buscar(nombrebusc,ciudades)<<" \n";
+            else
+                cout <<"La ciudad ingresada no se pudo encontrar en la lista de ciudades\n";
             break;
         default:
             break;

@@ -55,6 +55,9 @@ struct lista
         }
         cabeza = cola;
     }
+    /*El algoritmo que utilizamos para hacer el ordenamiento de la lista fue Shell Sort
+    porque este nos parecio que iba mas acorde a la logica de programacion que implementamos en el codigo
+    */
     void insertarordenado(Nodo *nuevo_nodo)
     {
         if (cola == NULL || cola->dato >= nuevo_nodo->dato)
@@ -95,16 +98,29 @@ struct lista
     }
     int Buscar(string nombusc)
     {
-        
+        Nodo *actual = new Nodo();
+        actual = cabeza;
+        int posicion = 0;
+        while ((actual != NULL) && (actual->dato <= nombusc))
+        {
+            if (actual->dato == nombusc)
+            {
+                return posicion;
+            }
+            else
+            {
+                actual = actual->siguiente;
+                posicion++;
+            }
+        }
         return 0;
     }
 };
 void menu()
 {
-    int opcion, posicion = 0;
+    int opcion;
     ifstream entrada("ciudades.txt");
     string linea, nombrebusc;
-    string name;
     lista ciudades;
     do
     {
@@ -149,9 +165,11 @@ void menu()
             getline(cin, nombrebusc);
             system("clear");
             if (ciudades.Buscar(nombrebusc) != 0)
-                cout << "la posicion en la lista de la ciudad " << nombrebusc << " es : " << ciudades.Buscar(nombrebusc) << " \n";
+            {
+                cout << "la posicion en la lista de la ciudad " << nombrebusc << " es : " << ciudades.Buscar(nombrebusc) << "\n";
+            }
             else
-                cout << "La ciudad ingresada no se pudo encontrar en la lista de ciudades\n";
+                cout << "El nombre de la ciudad no se encuentra en la lista o esta mal escrito ";
             break;
         default:
             break;

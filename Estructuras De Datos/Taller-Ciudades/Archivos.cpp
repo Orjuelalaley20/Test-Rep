@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include <bits/stdc++.h>
+#include <list>
 using namespace std;
 
 struct Nodo
@@ -110,7 +111,8 @@ void menu()
         cout << "Menu\n";
         cout << "1. leer archivo y cargar la lista\n";
         cout << "2. Ordenar las ciudades en la lista e escribirlas en un nuevo archivo \n";
-        cout << "3. salir\n";
+        cout << "3. Buscar ciudad\n";
+        cout << "4. salir\n";
         cout << "opcion :";
         cin >> opcion;
         switch (opcion)
@@ -141,10 +143,12 @@ void menu()
             ciudades.NuevoArchivo();
             cout << "\n";
             break;
+        case 3:
+            break;
         default:
             break;
         }
-    } while (opcion != 3);
+    } while (opcion != 4);
 }
 int main(int argc, char const *argv[])
 {

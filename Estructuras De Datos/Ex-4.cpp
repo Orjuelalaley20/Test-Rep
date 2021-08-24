@@ -1,21 +1,34 @@
-#include <stack>
 #include <iostream>
-#include <string>
+
 using namespace std;
-int main(int argc, char const *argv[])
+
+int fibonacci(int n)
+
 {
-    stack <char> pila;
-    char expreInfija[100];
-    char *apchar = expreInfija;
-    cout <<"Digite la expresion aritmetica : ";
-    cin >>expreInfija;
-       while (!pila.empty())
+
+    if (n <= 1)
+
     {
-        cout <<pila.top();
-        pila.pop();
+
+        return n;
     }
-    cout <<" en binario \n";
-    
-    
+
+    else
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main()
+
+{
+
+    int n;
+
+    n = 40;
+
+    for (int i = 1; i <= n; i++)
+
+        cout << fibonacci(i) << endl;
+
     return 0;
 }

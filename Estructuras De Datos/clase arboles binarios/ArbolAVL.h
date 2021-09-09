@@ -15,6 +15,7 @@ struct ArbolAVL
             raiz = new Nodo();
             raiz->padre = nullptr;
             raiz->altura = 0;
+            raiz->dato = info;
         }
         else
         {
@@ -25,11 +26,13 @@ struct ArbolAVL
             {
                 if (info > nodoPadre->dato)
                 {
-                    if (nodoPadre->derecha != nullptr)
+                    if (nodoPadre->derecha == nullptr)
                     {
                         nuevoNodo->altura = 0;
                         nuevoNodo->padre = nodoPadre;
                         nodoPadre->derecha = nuevoNodo;
+                        cout <<"inserto el elemento "<<info<<" a la derecha \n";
+                        break;
                     }
                     else
                         nodoPadre = nodoPadre->derecha;
@@ -41,6 +44,8 @@ struct ArbolAVL
                         nuevoNodo->altura = 0;
                         nuevoNodo->padre = nodoPadre;
                         nodoPadre->izquierda = nuevoNodo;
+                        cout <<"inserto el elemento "<<info<<" a la izquierda \n";
+                        break;
                     }
                     else
                         nodoPadre = nodoPadre->izquierda;
@@ -60,6 +65,7 @@ struct ArbolAVL
 
         
     }
+    
     void eliminar(Nodo *padre, Nodo *actual, int info)
     {
     }

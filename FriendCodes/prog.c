@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -14,4 +15,14 @@ int main()
     }
     printf("\n");
     return 0;
+}
+int mgetline(char *line, int max,FILE *f)
+{
+    if (fgets(line,max,f) == NULL)
+    {
+        return 0;
+    }
+    else
+        return(strlen(line));
+    
 }

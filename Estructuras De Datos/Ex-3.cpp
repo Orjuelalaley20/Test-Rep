@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
     cout <<"archivo creado con exito !\n";
     cout <<"------------------------------\n";
     ifstream entrada("archivo.txt");
-    char *linea = new char[30];
+    char linea[20];
     if (!entrada)
     {
         cout <<"no se pudo abrir el archivo de texto";

@@ -1,24 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct Poblado
-{
+struct Poblado{
     int cod;
     string nombre;
     double longi;
     double lati;
 };
 
-struct Municipio
-{
+struct Municipio{
     int cod;
     string nombre;
-    list<Poblado>pob;
+    vector<Poblado>pob;
 };
 
-struct Departamento
-{
+struct Departamento{
     int cod;
     string nombre;
-    list<Municipio>mun;
-
+    vector<Municipio>mun;
 };

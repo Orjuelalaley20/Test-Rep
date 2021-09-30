@@ -17,7 +17,7 @@ void cargar(string archivo)
     }
     else
     {
-        while (arch)
+        while (!arch.eof())
         {
             arch.getline(linea, 100, '\n');
             lin = strtok(linea, ",");
@@ -26,6 +26,14 @@ void cargar(string archivo)
                 tempo.push_back(lin);
                 lin = strtok(NULL, ",");
             }
+            for (int i = 0; i < dept.size(); i++)
+            {
+                if ( reg_D.nombre == reg_D.nombre)
+                {
+                  cout <<"pollito\n";
+                }
+            }
+
             reg_P.longi = stod(tempo[8]);
             reg_P.lati = stod(tempo[7]);
             reg_P.nombre = tempo[5];
@@ -33,14 +41,10 @@ void cargar(string archivo)
             reg_M.pob.push_back(reg_P);
             reg_M.nombre = tempo[3];
             reg_M.cod = stoi(tempo[2]);
-            reg_D.mun.push_back(reg_M);            
+            reg_D.mun.push_back(reg_M);
             reg_D.nombre = tempo[1];
             reg_D.cod = stoi(tempo[0]);
             dept.push_back(reg_D);
-            for (Departamento d : dept)
-            {
-                cout <<d.nombre<<"\n";
-            }
             tempo.clear();
         }
         arch.close();

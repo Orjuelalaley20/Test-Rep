@@ -26,25 +26,26 @@ void cargar(string archivo)
                 tempo.push_back(lin);
                 lin = strtok(NULL, ",");
             }
-            for (int i = 0; i < dept.size(); i++)
+            if (reg_D.cod != stoi(tempo[0]))
             {
-                if ( reg_D.nombre == reg_D.nombre)
-                {
-                  cout <<"pollito\n";
-                }
+                reg_D.cod = stoi(tempo[0]);
+            }
+            else if(reg_D.cod == stoi(tempo[0]))
+            {
+                cout<<reg_D.cod;
             }
 
-            reg_P.longi = stod(tempo[8]);
-            reg_P.lati = stod(tempo[7]);
-            reg_P.nombre = tempo[5];
-            reg_P.cod = stod(tempo[4]);
-            reg_M.pob.push_back(reg_P);
-            reg_M.nombre = tempo[3];
-            reg_M.cod = stoi(tempo[2]);
-            reg_D.mun.push_back(reg_M);
-            reg_D.nombre = tempo[1];
-            reg_D.cod = stoi(tempo[0]);
-            dept.push_back(reg_D);
+            // reg_P.longi = stod(tempo[8]);
+            // reg_P.lati = stod(tempo[7]);
+            // reg_P.nombre = tempo[5];
+            // reg_P.cod = stod(tempo[4]);
+            // reg_M.pob.push_back(reg_P);
+            // reg_M.nombre = tempo[3];
+            // reg_M.cod = stoi(tempo[2]);
+            // reg_D.mun.push_back(reg_M);
+            // reg_D.nombre = tempo[1];
+            // reg_D.cod = stoi(tempo[0]);
+            // dept.push_back(reg_D);
             tempo.clear();
         }
         arch.close();

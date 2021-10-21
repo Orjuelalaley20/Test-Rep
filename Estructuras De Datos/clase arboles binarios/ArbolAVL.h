@@ -31,7 +31,7 @@ struct ArbolAVL
                         nuevoNodo->altura = 0;
                         nuevoNodo->padre = nodoPadre;
                         nodoPadre->derecha = nuevoNodo;
-                        cout <<"inserto el elemento "<<info<<" a la derecha \n";
+                        cout << "inserto el elemento " << info << " a la derecha \n";
                         break;
                     }
                     else
@@ -44,7 +44,7 @@ struct ArbolAVL
                         nuevoNodo->altura = 0;
                         nuevoNodo->padre = nodoPadre;
                         nodoPadre->izquierda = nuevoNodo;
-                        cout <<"inserto el elemento "<<info<<" a la izquierda \n";
+                        cout << "inserto el elemento " << info << " a la izquierda \n";
                         break;
                     }
                     else
@@ -59,14 +59,8 @@ struct ArbolAVL
         {
             return;
         }
-        cout <<"--"<< aux->dato;
+        cout << "--" << aux->dato;
         preorden(aux->izquierda);
         preorden(aux->derecha);
-
-        
-    }
-    
-    void eliminar(Nodo *padre, Nodo *actual, int info)
-    {
     }
 };

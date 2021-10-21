@@ -26,7 +26,8 @@ void cargar(string archivo)
                 tempo.push_back(lin);
                 lin = strtok(NULL, ",");
             }
-            if (reg_D.cod != stoi(tempo[0]))
+            dept[reg_D.cod].cod = stoi(tempo[0]);
+            if (dept[reg_D.cod].cod != stoi(tempo[0]))
             {
                 reg_D.cod = stoi(tempo[0]);
             }

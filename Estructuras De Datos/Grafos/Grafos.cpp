@@ -28,10 +28,21 @@ void mostrarAristas(list <int> lista[], int v)
         {
             cout << *it << " --> ";
         }
+        cout <<"\n";
         
     }
     
 }
+void mostrarVertices(int v)
+{
+    for (int i = 0; i < v; i++)
+    {
+        cout << i << " | ";
+    }
+    cout <<"\n";
+}
+void borrarAristas();
+void mostrarGrafo();
 int main()
 {
     grafo g1(5);
@@ -45,7 +56,7 @@ int main()
     g1.insertarAristas(1,3);
 
     cout <<"El conjunto V de vertices es: \n";
-
+    mostrarVertices(g1.v);
     cout <<"El conjunto A de es : \n";
     mostrarAristas(g1.listAdy, g1.v);
     return 0;

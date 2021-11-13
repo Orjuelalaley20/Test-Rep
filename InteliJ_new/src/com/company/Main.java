@@ -1,8 +1,12 @@
-package com.company;
-
 public class Main {
 
+    public Main() {
+    }
+
     public static void main(String[] args) {
-	// write your code here
+        part_2 v = new part_2();
+        System.out.println("hello world");
+        v.sumar();
+        System.out.println();
     }
 }

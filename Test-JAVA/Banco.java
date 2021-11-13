@@ -21,7 +21,7 @@ public class Banco implements Serializable {
      */
 
     public Banco() {
-
+        
     }
 
     /**

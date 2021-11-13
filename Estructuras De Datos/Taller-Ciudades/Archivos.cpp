@@ -51,21 +51,12 @@ struct lista
 //         actual->siguiente = nuevo_nodo;
 //     }
 // }
-void NuevoArchivo(list<string> ciudades)
+void listar(list<string> ciudades)
 {
-    fstream salida("ciudadesOrdenadas.txt", ios::app);
-    if (!salida)
-    {
-        cout << "no se pudo entrar/crear el archivo binario ";
-    }
-    else
-    {
         for (string n : ciudades)
         {
-            salida << n << "\n";
+            cout << n << "\n";
         }
-        cout << "archivo creado con exito \n";
-        salida.close();
     }
 }
 int Buscar(string nombusc, list<string> ciudades)
@@ -131,7 +122,6 @@ void menu()
                 cout << " | " << d << "\n";
             }
             cout << "\n";
-            NuevoArchivo(ciudades);
             break;
         case 3:
             cin.ignore();

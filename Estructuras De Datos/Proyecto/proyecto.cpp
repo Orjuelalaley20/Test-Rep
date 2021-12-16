@@ -13,7 +13,7 @@ void cargar(string archivo)
     vector<string> tempo;
     if (!arch)
     {
-        cout << "no se puede establecer la comunicacion con el archivo ";
+        cout << "No se pudo cargar correctamente la información desde " << archivo << " \n";
     }
     else
     {
@@ -26,14 +26,11 @@ void cargar(string archivo)
                 tempo.push_back(lin);
                 lin = strtok(NULL, ",");
             }
-            dept[reg_D.cod].cod = stoi(tempo[0]);
-            if (dept[reg_D.cod].cod != stoi(tempo[0]))
+            
+            cout << dept[reg_D.cod].cod;
+            for (int i = 0; i < dept.size(); i++)
             {
-                reg_D.cod = stoi(tempo[0]);
-            }
-            else if(reg_D.cod == stoi(tempo[0]))
-            {
-                cout<<reg_D.cod;
+                cout << i;
             }
 
             // reg_P.longi = stod(tempo[8]);

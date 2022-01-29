@@ -19,6 +19,7 @@ void cargar(string archivo)
     {
         while (!arch.eof())
         {
+            
             arch.getline(linea, 100, '\n');
             lin = strtok(linea, ",");
             while (lin != NULL)

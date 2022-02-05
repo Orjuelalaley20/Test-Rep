@@ -1,63 +1,51 @@
 #include <bits/stdc++.h>
+#include "Funtions.cxx"
 using namespace std;
-
-void Cargar_imagen(){
-
-}
-void Info_imagen(){
-    
-}
-void Info_volumen(){
-
-}
-void proyeccion2D(){
-
-}
-
-void Ayuda(){
-    cout << "**********BIENVENIDO DIVIPOLA COLOMBIA********** " << endl;
-    cout << " ->COMANDOS  PERMITIDOS " << endl;
-    cout << " carga_divipola nombre_archivo" << endl;
-    cout << " listar_departamentos" << endl;
-    cout << " listar_municipios codigo_depto" << endl;
-    cout << " listar_poblaciones codigo_municipio" << endl;
-    cout << " info_sumaria codigo_depto" << endl;
-    cout << " carga_SC  nombre_archivo" << endl;
-    cout << " esta_en_sistema codigo_municipio" << endl;
-    cout << " salida" << endl;
-}
 
 int main()
 {
-    char comando[100];
-    bool valido = true;
+    // Cadenas
+    char comando[500];
+
+    // Apuntadores
+    char *cad;
+
+    // Vectores
+    vector<string> com;
+
     do
     {
         cout << "$ ";
-        cin >> comando;
-        if (strncmp(comando, "salida", 6) == 0)
+        cin.getline(comando, 500);
+
+        cad = strtok(comando, " ");
+        while (cad != NULL)
         {
-            return 0;
+            com.push_back(cad);
+            cad = strtok(NULL, " ");
         }
-        if (strncmp(comando, "cargar_imagen", 13) == 0)
+
+        if (com[0] == "cargar_imagen")
         {
-            Cargar_imagen();
+            Cargar_imagen(com[1]);
+            com.clear();
         }
-        if (strncmp(comando, "info_imagen",11) == 0)
-        {
-            Info_imagen();
-        }
-        if (strncmp(comando, "info_volumen", 12) == 0)
-        {
-            Info_volumen();
-        }
-        if (strncmp(comando, "proyeccion2D", 12) == 0)
-        {
-            proyeccion2D();
-        }
-        if (strncmp(comando, "ayuda", 5) == 0)
+        else if (com[0] == "ayuda")
         {
             Ayuda();
         }
-    } while (comando != "salida");
+        else if (com[0] == "salir")
+        {
+            cout << "  Termina la ejecucion de la aplicacion." << endl;
+            com.clear();
+            break;
+        }
+        else
+        {
+            cout << "  comando no existente" << endl;
+            com.clear();
+        }
+    } while (com[0] != "salir");
+
+    return 0;
 }

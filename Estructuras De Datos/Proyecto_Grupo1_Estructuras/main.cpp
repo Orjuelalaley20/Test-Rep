@@ -79,11 +79,11 @@ void carga_SC (){
      cout << " ->COMANDOS  PERMITIDOS "<< endl;
      cout <<" carga_divipola nombre_archivo" << endl;
      cout <<" listar_departamentos" << endl;
-     cout <<" listar_municipios código_depto"<< endl;
-     cout <<" listar_poblaciones código_municipio"<<endl;
-     cout <<" info_sumaria código_depto"<<endl;
+     cout <<" listar_municipios codigo_depto"<< endl;
+     cout <<" listar_poblaciones codigo_municipio"<<endl;
+     cout <<" info_sumaria codigo_depto"<<endl;
      cout <<" carga_SC  nombre_archivo"<<endl;
-     cout <<" esta_en_sistema código_municipio"<<endl;
+     cout <<" esta_en_sistema codigo_municipio"<<endl;
      cout <<" salida"<<endl;
     //while (valido==true){
         cout <<"$ ";

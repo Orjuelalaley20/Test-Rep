@@ -7,7 +7,8 @@
 
 using namespace std;
 
-int main () {
+int main()
+{
 
 	Rectangle rect1;
 	int a, b;
@@ -21,9 +22,9 @@ int main () {
 	cout << "Ingrese alto del rectangulo: ";
 	cin >> rect1.height;
 
-	cout << "\nPerimetro del rectangulo: " << perimeterRect( rect1 ) << endl;
-	cout << "Area del rectangulo: " << areaRect( rect1 ) << endl;
-	cout << "Distancia del rectangulo al origen de coordenadas: " << distOriginRect( rect1 ) << endl;
+	cout << "\nPerimetro del rectangulo: " << perimeterRect(rect1) << endl;
+	cout << "Area del rectangulo: " << areaRect(rect1) << endl;
+	cout << "Distancia del rectangulo al origen de coordenadas: " << distOriginRect(rect1) << endl;
 
 	return 0;
 }

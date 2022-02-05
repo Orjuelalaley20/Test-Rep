@@ -1,0 +1,24 @@
+
+/* 
+ * Ejemplo sencillo de listas con arreglos
+ * Uso: empleados archivo 
+ * Lee un archivo de empleados con su edad y tiempo de trabajo
+ * Imprime los empleados y sus datos leidos del archivo pasado en la
+ * linea de comandos, y luego imprime aquellos empleados
+ * seleccionados que cumplen con los requisitos minimos de edad y
+ * tiempo de trabajo (ver empleados.h)
+ * Ejemplo: empleados datos.in
+ * Contenido:
+   * Fuentes: 
+     * empleados.c: Programa principal
+     * entrada.c: Funciones auxiliares para leer archivo
+     * empleados.h: Definiciones comunes
+   * Datos de prueba:
+     * datos.in
+     * datos2.in
+   * Makefile
+
+ * Ver archivo de entrada "datos.in" como ejemplo del formato
+ *
+ * Adaptado por Carlos Figueira, mayo 2013
+ */

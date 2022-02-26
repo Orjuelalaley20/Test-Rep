@@ -22,6 +22,8 @@ TList NextAnagram( const TList& lst )
 
   // 1. Stack the input values
   /** TODO #1 **/
+  
+
 
   // 2. Try to find a pivot
   finished = false;

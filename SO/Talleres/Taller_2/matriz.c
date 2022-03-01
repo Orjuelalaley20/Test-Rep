@@ -8,8 +8,8 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
-main(int argc, char *argv[])
-
+#include <sys/wait.h>
+void main(int argc, char *argv[])
 {
   if (argc != 2)
   {
@@ -42,7 +42,7 @@ main(int argc, char *argv[])
   
 
   for (i = 0; i < nprocesos; ++i)
-  { // Creaci�n de los procesos.
+  { // Creacion de los procesos.
 
     if ((childpid = fork()) < 0)
     {
@@ -50,7 +50,7 @@ main(int argc, char *argv[])
       exit(0);
     }
 
-    // colocar aqui el c�digo de los hijos
+    // colocar aqui el codigo de los hijos
     if (childpid == 0)
     {
       for (int i = inicio; i < cuantos + final; i++)

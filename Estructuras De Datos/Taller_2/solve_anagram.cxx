@@ -64,10 +64,8 @@ int main(int argc, char *argv[])
       // Print all (or at least MAX_ANAGRAMS) anagrams
       for (unsigned long i = 0; i < nAnagrams; ++i)
       {
-        std::copy(
-            stringList.begin(), stringList.end(),
-            std::ostream_iterator<std::string>(std::cout, " : "));
-        std::cout << std::endl;
+        copy(stringList.begin(), stringList.end(),ostream_iterator<string>(cout, " : "));
+        cout << endl;
         stringList = NextAnagram(stringList);
 
       } // rof
@@ -85,10 +83,8 @@ int main(int argc, char *argv[])
       // Print all (or at least MAX_ANAGRAMS) anagrams
       for (unsigned long i = 0; i < nAnagrams; ++i)
       {
-        std::copy(
-            charList.begin(), charList.end(),
-            std::ostream_iterator<char>(std::cout, ""));
-        std::cout << std::endl;
+        copy(charList.begin(), charList.end(),ostream_iterator<char>(cout, ""));
+        cout <<endl;
         charList = NextAnagram(charList);
 
       } // rof
@@ -98,9 +94,9 @@ int main(int argc, char *argv[])
   } while (line_type != 2);
 
   // Close input stream, if needed (ie. it wasn't taken from std::cin)
-  if (input != &std::cin)
+  if (input != &cin)
   {
-    dynamic_cast<std::ifstream *>(input)->close();
+    dynamic_cast<ifstream *>(input)->close();
     delete input;
 
   } // fi
@@ -120,12 +116,8 @@ TCharacterList ReadAsCharacterList(std::istream &input)
     std::string str;
     input >> str;
 
-    for (
-        std::string::const_iterator sIt = str.begin();
-        sIt != str.end();
-        ++sIt)
+    for (string::const_iterator sIt = str.begin();sIt != str.end();++sIt)
       lst.push_back(*sIt);
-
   } // elihw
 
   return (lst);

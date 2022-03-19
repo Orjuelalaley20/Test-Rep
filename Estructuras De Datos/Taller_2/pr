@@ -1,4 +1,4 @@
-/**  // 2. Try to find a pivot
+// 2. Try to find a pivot
   finished = false;
   v_aux = s.top();
   s.pop();
@@ -14,12 +14,19 @@
     else
     {
       // 2.1 Pop value from stack and store it into 'v_aux'
-      
-      v_aux = s.pop();
+      /** TODO #2 **/
+      for (int i = 0; i < lst; i++)
+        s.push(lst);
+
+      while (!s.empty())
+      {
+        v_aux += s.top();
+        s.pop();
+      }
 
     } // fi
 
-  } while (v_aux > last_v);**/
+  } while (v_aux > last_v);
 
   // 2.5. if pivot has been found...
   if (!finished)
@@ -28,50 +35,70 @@
 
     // 3. Find a value just below pivot
     /** TODO #3 **/
-    for (TValue i = 0 ; i < v_aux; i+1)
-    {
-      v_aux.push(i + 1);
-      while (!v_aux.empty())
-      {
-        int n = v_aux.top();
-        v_aux.pop();
-        std::cout << n << std::endl;
-      }
-    }
+    for (int i = 0; i < pivot; i++)
+      q.push(pivot);
 
+    while (!q.empty() < pivot)
+    {
+      pivot += q.top();
+      q.pop();
+    }
     // 4. Put it into stack
     s.push(v_aux);
 
-    // 5. Put pivot back to v_auxueue
-    v_aux.push(pivot);
+    // 5. Put pivot back to queue
+    q.push(pivot);
 
     // 6. Find the value just above pivot
     /** TODO #4 **/
-    for (int i = 0; i > q; i++)
+    for (int i = 0; i < pivot; i++)
+      q.push(pivot);
+
+    while (!q.empty() > pivot)
     {
-      v_aux.push(i + 1);
-      while (!v_aux.empty())
-      {
-        int n = v_aux.top();
-      }
+      pivot += q.top();
+      q.pop();
     }
+
     // 7. Put it into stack
     s.push(v_aux);
 
   } // fi
 
-  // 8. Finish filling the stack by emptying the v_auxueue
+  // 8. Finish filling the stack by emptying the queue
   /** TODO #5 **/
-  for (int i = 0; i < s.size(); i++)
+  for (int i = 0; i < last_v; ++i)
+    s.push(i);
+  while (!s.empty())
   {
-    s.push(v_aux);
+    q.top();
+    q.pop();
   }
-  v_aux = NULL;
 
   // 9. Fill the final answer in reverse order by emptying the stack
   /** TODO #6 **/
-  for (int i = 0; i < s.size(); i++)
+  for (int i = 0; i < last_v; ++i)
+    s.push(res);
+  while (!s.empty())
   {
-    s.pop();
-    s.push_front(res);
-  }*/
+    s.top(res);
+    s.pop(res);
+  }
+  // 10. Return
+  return (res);
+}
+
+#endif
+
+// -------------------------------------------------------------------------
+template <class TList>
+unsigned long ComputeNumberOfAnagrams(const TList &lst)
+{
+  /** TODO #7 **/
+  
+  return 0;
+}
+
+// __NEXTANAGRAM__HXX__
+
+// eof - NextAnagram.hxx

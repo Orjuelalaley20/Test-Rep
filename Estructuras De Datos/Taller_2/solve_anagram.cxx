@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 }
 
 // -------------------------------------------------------------------------
-TCharacterList ReadAsCharacterList(std::istream &input)
+TCharacterList ReadAsCharacterList(istream &input)
 {
   // Prepare output
   TCharacterList lst;
@@ -113,7 +113,7 @@ TCharacterList ReadAsCharacterList(std::istream &input)
   // Loop over a space separated stream (tokenizer)
   while (!input.eof())
   {
-    std::string str;
+    string str;
     input >> str;
 
     for (string::const_iterator sIt = str.begin();sIt != str.end();++sIt)
